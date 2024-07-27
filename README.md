@@ -13,7 +13,7 @@ Este repositório contém um exemplo simples de como criar um projeto na Azure u
 O projeto é organizado da seguinte forma:
 
 - `resource-group.tf`: Arquivo que armazena os componentes do Resource Group.
-- `data.tf`: Arquivo que armazena os objetos do tipo Data.
+- `data.tf`: Arquivo que armazena os objetos do tipo data.
 - `providers.tf`: Arquivo que armazena os providers do terraform.
 - `keyvault.tf`: Arquivo que armazena os componentes do KeyVault.
 - `storage-account.tf`: Arquivo que armazena os componentes do Storage Account.
@@ -29,14 +29,21 @@ O projeto é organizado da seguinte forma:
 
    ```bash
    az login
+   az account set --subscription [id-subscription]
    ```
    
-2. **Inicializar o Terraform**
+2. **Login e Inicio do Terraform**
+
+   ```bash
+   terraform login
+   ```
 
    Navegue até o diretório do projeto e inicialize o Terraform:  
 
    ```bash
-   terraform init
+   terraform init -upgrade
+   terraform workspace list
+   terraform workspace select [nome-workspace]
    ```
 
 2. **Aplicar a Configuração**
